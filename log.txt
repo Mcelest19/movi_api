@@ -100,3 +100,5 @@ Timestamp: Fri Feb 17 2023 11:48:50 GMT+0100 (Central European Standard Time)
 ::1 - - [06/Mar/2023:17:53:10 +0000] "DELETE /users/Milana%20Dim/movies/63ff4940033c489f1592c62c HTTP/1.1" 500 17 "-" "PostmanRuntime/7.31.1"
 ::1 - - [06/Mar/2023:17:53:48 +0000] "DELETE /users/Milana%20Dim/movies/63ff4940033c489f1592c62c HTTP/1.1" 200 135 "-" "PostmanRuntime/7.31.1"
 ::1 - - [06/Mar/2023:17:55:21 +0000] "DELETE /users/Milana%20Dim HTTP/1.1" 200 23 "-" "PostmanRuntime/7.31.1"
+::1 - - [06/Mar/2023:18:03:54 +0000] "GET /users/Sunny HTTP/1.1" 200 239 "-" "PostmanRuntime/7.31.1"
+::1 - - [06/Mar/2023:18:04:27 +0000] "PUT /users/Sunny HTTP/1.1" 500 17 "-" "PostmanRuntime/7.31.1"

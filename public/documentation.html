@@ -83,46 +83,48 @@
     <td>/users</td>
     <td>POST</td>
     <td>-</td>
-    <td>A JSON object holding data about the user to add, structured like: { "name" : "Tom" }</td>
+    <td>A JSON object holding data about the user to add, structured like: 
+      { "Username": "String","Password": "String","Email": "String","Birthday": "Date"}</td>
     <td>JSON object holding data about the user that was added:
-        <p>{
-            "name": "Tom",
-            "favoriteMovie": [],
-            "id": "5b16b367-86c1-49e5-9761-7b04fb1a0d4d"
-        }</p>
+        <p>{ "username" : "Suuny", 
+          "Password": "78776878", 
+          "Email": "sunny@gmail.com", 
+          "Birthday": "1976-11-21", 
+          "favorite movie" : [] } 
+          including an ID</p>
     </td>
   </tr>
 
   <tr>
     <td>Allows users to update their user info</td>
-    <td>/users/:id</td>
+    <td>/users/:UserName</td>
     <td>PUT</td>
-    <td>:id</td>
+    <td>:UserName</td>
     <td>-</td>
     <td>A JSON object holding data about the updated user information</td>
   </tr>
 
   <tr>
     <td>Allows users to add a movie to their favourites</td>
-    <td>/users/:id/:movieTitle</td>
+    <td>/users/:UserName/movies/:_id</td>
     <td>POST</td>
-    <td>:id, :movieTitle</td>
+    <td>:UserName, :_id</td>
     <td>-</td>
     <td>A JSON object holding data about the user and the movie that was added</td>
   </tr>
 
   <tr>
     <td>Allows users to remove a movie from their favourites</td>
-    <td>/users/:id/:movieTitle</td>
+    <td>/users/:UserName/:_id</td>
     <td>DELETE</td>
-    <td>:id, :movieTitle</td>
+    <td>:UserName, :_id</td>
     <td>-</td>
     <td>A JSON object holding data about the user and the movie that was removed</td>
   </tr>
 
   <tr>
     <td>Allows existing users to deregister</td>
-    <td>/users/:id</td>
+    <td>/users/:UserName</td>
     <td>DELETE</td>
     <td>:id</td>
     <td>-</td>
