@@ -23,8 +23,11 @@ app.use(cors());
 const passport = require('passport');
 require('./passport');
 
-//Integrating Mongoose with REST_API 
-mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
+/*/Integrating local MongoDB with REST_API 
+mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });*/
+
+//Integrating online Mongo DB with REST_API 
+mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // create a write stream (in append mode)
 // a ‘log.txt’ file is created in root directory
