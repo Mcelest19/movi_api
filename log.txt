@@ -146,3 +146,5 @@ Timestamp: Fri Feb 17 2023 11:48:50 GMT+0100 (Central European Standard Time)
 ::1 - - [07/Mar/2023:20:53:58 +0000] "GET /users/Sunny HTTP/1.1" 401 - "-" "PostmanRuntime/7.31.1"
 ::1 - - [07/Mar/2023:20:54:26 +0000] "GET /movies/Titanik HTTP/1.1" 401 - "-" "PostmanRuntime/7.31.1"
 ::1 - - [07/Mar/2023:20:55:09 +0000] "DELETE /users/Sunny HTTP/1.1" 401 - "-" "PostmanRuntime/7.31.1"
+127.0.0.1 - - [22/Mar/2023:13:10:04 +0000] "GET /users HTTP/1.1" 401 - "-" "PostmanRuntime/7.31.1"
+127.0.0.1 - - [22/Mar/2023:13:14:53 +0000] "GET /users HTTP/1.1" 401 - "-" "PostmanRuntime/7.31.1"
