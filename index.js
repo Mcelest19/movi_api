@@ -13,11 +13,6 @@ const Models = require('./models.js');
 
 const Movies = Models.Movie;
 const Users = Models.User;
-/*/Integrating local MongoDB with REST_API 
-mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });*/
-
-//Integrating online Mongo DB with REST_API 
-mongoose.connect( 'mongodb+srv://Marina:Photo25m@myflixdb.50klmht.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 app.use(bodyParser.json());
@@ -27,6 +22,12 @@ const cors = require('cors');
 app.use(cors());
 const passport = require('passport');
 require('./passport');
+
+/*/Integrating local MongoDB with REST_API 
+mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });*/
+
+//Integrating online Mongo DB with REST_API 
+mongoose.connect( 'mongodb+srv://Marina:Photo25m@myflixdb.50klmht.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // create a write stream (in append mode)
 // a ‘log.txt’ file is created in root directory
