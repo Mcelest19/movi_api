@@ -1,9 +1,11 @@
+"use strict";
+
 const express = require('express'),
   morgan = require('morgan'),
   app = express(),  
   bodyParser = require('body-parser'),
-  uuid = require ('uuid');
-  fs = require('fs');   
+  uuid = require ('uuid'),
+  fs = require('fs'),   
   path = require('path');  
 
 const { check, validationResult } = require('express-validator');
@@ -52,8 +54,7 @@ app.get("/movies", passport.authenticate('jwt', { session: false }), (req, res)=
       res.status(201).json(movies);
     })
     .catch((err)=> {
-      console.error(err);
-      console.log("I am here");
+      console.error(err);      
       res.status(500).send("Error: "+ err);
     });
 });
