@@ -159,11 +159,24 @@ app.get('/users/:UserName', passport.authenticate('jwt', { session: false }), (r
 });
 
 // Update a user's info, by username (Allow users to update their user info )
-app.put('/users/:UserName', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.put('/users/:UserName',[  
+  check('UserName', 'Username is required').isLength({min: 5}),
+  check('UserName', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+  check('Password', 'Password is required').not().isEmpty(),
+  check('Email', 'Email does not appear to be valid').isEmail()
+ ], passport.authenticate('jwt', { session: false }), (req, res) => {
+
+  let errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+
+  let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOneAndUpdate({ UserName: req.params.UserName }, { $set:
     {
       UserName: req.body.UserName,
-      Password: req.body.Password,
+      Password: hashedPassword,
       Email: req.body.Email,
       Birthday: req.body.Birthday
     }
@@ -184,7 +197,7 @@ app.put('/users/:UserName', passport.authenticate('jwt', { session: false }), (r
 });
 
 // Add a movie to a user's list of favorites (Allow users to add a movie to their list of favorites)
-app.post('/users/:UserName/movies/:_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.post('/users/:UserName/movies/:_id',  passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ UserName: req.params.UserName }, {
      $push: { FavoriteMovies: req.params._id }
    },
