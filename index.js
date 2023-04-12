@@ -17,11 +17,14 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 
+// Add cors
+const cors = require('cors');
+app.use(cors());
+app.options('*', cors());  // enable pre-flight
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 let auth = require('./auth')(app);
-const cors = require('cors');
-app.use(cors());
 const passport = require('passport');
 require('./passport');
 
