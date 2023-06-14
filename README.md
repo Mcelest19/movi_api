@@ -87,7 +87,7 @@ Date Night Movies (API) is currently live and hosted with GitHub Pages. This RES
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/GuyRimel/Date-Night-Movies.git
+   git clone https://github.com/Mcelest19/movi_api.git
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
