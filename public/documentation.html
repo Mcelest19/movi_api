@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="documentattion.css" />
     <title>Documentation</title>
 </head>
 <body>
-    <h1>Documentation</h1>    
+    <h1>Documentation</h1><br>    
     <p>
         The web application is providing users with access to information about different
         movies, directors, and genres. Users are able to sign up, update their
         personal information, and create a list of their favorite movies.        
     </p> 
+    <br> 
     <div>  
-    <h2>Features</h2>
+    <h2>Features</h2><br> 
     <ul class="list">
         <li>Return a list of ALL movies to the user</li>
         <li>Return data (description, genre, director, image URL, whether it's featured or not) about a single movie by title to the user</li>
@@ -25,9 +27,9 @@
         <li>Allow users to remove a movie from their list of favorites</li>
         <li>Allow existing users to deregister.</li>
     </ul>
-  </div>
+  </div><br> 
 
-<h2>API Endpoints Documentation</h2>
+<h2>API Endpoints Documentation</h2><br> 
 
 <table class="table">
   <thead>
@@ -45,7 +47,7 @@
   <tr>
       <td>Returns a list of all movies</td>
       <td>/movies</td>
-      <td>GET</td>
+      <td class="get">GET</td>
       <td>-</td>
       <td>-</td>
       <td>A JSON object holding data about all the movies</td>
@@ -54,7 +56,7 @@
   <tr>
     <td>Returns data about single movie by title</td>
     <td>/movies/:title</td>
-    <td>GET</td>
+    <td class="get">GET</td>
     <td>:title</td>
     <td>-</td>
     <td>A JSON object holding data about a single movie</td>
@@ -63,7 +65,7 @@
   <tr>
     <td>Returns data about a genre</td>
     <td>/movies/:genre</td>
-    <td>GET</td>
+    <td class="get">GET</td>
     <td>:genre</td>
     <td>-</td>
     <td>A JSON object holding data about a specific genre of movie</td>
@@ -72,7 +74,7 @@
   <tr>
     <td>Returns data about a director by name</td>
     <td>/movies/director/:directorName</td>
-    <td>GET</td>
+    <td class="get">GET</td>
     <td>:directorName</td>
     <td>-</td>
     <td>A JSON object holding data about a specific director</td>
@@ -81,7 +83,7 @@
   <tr>
     <td>Allows new users to register</td>
     <td>/users</td>
-    <td>POST</td>
+    <td class="post">POST</td>
     <td>-</td>
     <td>A JSON object holding data about the user to add, structured like: 
       { "Username": "String","Password": "String","Email": "String","Birthday": "Date"}</td>
@@ -98,7 +100,7 @@
   <tr>
     <td>Allows users to update their user info</td>
     <td>/users/:UserName</td>
-    <td>PUT</td>
+    <td class="put">PUT</td>
     <td>:UserName</td>
     <td>-</td>
     <td>A JSON object holding data about the updated user information</td>
@@ -107,7 +109,7 @@
   <tr>
     <td>Allows users to add a movie to their favourites</td>
     <td>/users/:UserName/movies/:_id</td>
-    <td>POST</td>
+    <td class="post">POST</td>
     <td>:UserName, :_id</td>
     <td>-</td>
     <td>A JSON object holding data about the user and the movie that was added</td>
@@ -116,7 +118,7 @@
   <tr>
     <td>Allows users to remove a movie from their favourites</td>
     <td>/users/:UserName/:_id</td>
-    <td>DELETE</td>
+    <td class="delete">DELETE</td>
     <td>:UserName, :_id</td>
     <td>-</td>
     <td>A JSON object holding data about the user and the movie that was removed</td>
@@ -125,7 +127,7 @@
   <tr>
     <td>Allows existing users to deregister</td>
     <td>/users/:UserName</td>
-    <td>DELETE</td>
+    <td class="delete">DELETE</td>
     <td>:id</td>
     <td>-</td>
     <td>A text message indicating whether the user has successfully deregistered</td>
